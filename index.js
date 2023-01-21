@@ -5,6 +5,18 @@
 //то показати через alert: "True!"
 //у противному випадку показати:"Don't you know? ECMAScript!"
 
+
+let mess = prompt("What is the official name of JavaScript?");
+// alert();
+// if(mess === "ECMAScript"){
+//     alert("True!");
+// } else {alert("Don't you know? ECMAScript!");}
+
+const text =  mess === "ECMAScript"? "True!" : "Don't you know? ECMAScript!";
+alert(text);
+
+
+
 //2. Напишіть програму, яка запитає у користувача "Enter the number of minutes to format"
 //число (кількість хвилин) і виведе в консоль
 //рядок у форматі годин і хвилин, тобто 70 має повернути у консоль "01:10"
