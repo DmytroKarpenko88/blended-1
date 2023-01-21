@@ -75,6 +75,53 @@
 // const loginInput = prompt("Hello, please enter your login!");
 //
 
+const message = prompt('Hello, please enter your login!')
+
+// if (message === null) {
+//     console.log('Authorization has been cancelled')
+// } else if (message === 'admin') {
+//     const pass = prompt('Please enter your password')
+
+//     if (pass === null) {
+//         console.log('Authorization has been cancelled')
+//     } else if (pass === 'adminPassword') {
+//         console.log('Hello!')
+//     } else {
+//         console.log('Goodbye!')
+//     }
+// } else {
+//     console.log('Goodbye!')
+// }
+
+// let text 
+// switch (message) {
+//     case null:
+//         text = 'Authorization has been cancelled'
+//         break;
+//     case 'admin':
+//     const pass = prompt('Please enter your password')
+//     switch (pass) {
+//         case null:
+//         text = 'Authorization has been cancelled'
+//         break;
+        
+//         case 'adminPassword':
+//         text = 'Hello!'
+//         break;
+ 
+//         default:
+//             text = 'Goodbye!'
+//             break;
+//     }
+//         break;
+
+//     default:
+//         text = 'Goodbye!'
+//         break;
+// }
+
+// console.log(text);
+
 //6. При завантаженні сторінки користувачу у prompt пропонується ввести число 'Hello, enter please the number'.
 // Введене число додається до значення змінної total.
 //Операція введення числа продовжується до тих пір, поки користувач не натисне кнопку Cancel у prompt.
