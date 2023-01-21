@@ -5,7 +5,6 @@
 //то показати через alert: "True!"
 //у противному випадку показати:"Don't you know? ECMAScript!"
 
-
 // let mess = prompt("What is the official name of JavaScript?");
 // alert();
 // if(mess === "ECMAScript"){
@@ -15,28 +14,21 @@
 // const text =  mess === "ECMAScript"? "True!" : "Don't you know? ECMAScript!";
 // alert(text);
 
-
-
 // 2. Напишіть програму, яка запитає у користувача "Enter the number of minutes to format"
 // число (кількість хвилин) і виведе в консоль
 // рядок у форматі годин і хвилин, тобто 70 має повернути у консоль "01:10"
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 
-const message = prompt('Enter the number of minutes to format');
+// const message = prompt('Enter the number of minutes to format')
 
-
-const hours = String(Math.floor(message / 60)).padStart(2, 0);
-// console.log('hours: ', hours)
-// const minutes = message - 60 * hours;
-// console.log("minutes", minutes)
-const minutes = String(message % 60).padStart(2, 0);
-// console.log('minutes: ', minutes)
-const result = `${hours}:${minutes}`;
-console.log(result)
-
-
-
-
+// const hours = String(Math.floor(message / 60)).padStart(2, 0)
+// // console.log('hours: ', hours)
+// // const minutes = message - 60 * hours;
+// // console.log("minutes", minutes)
+// const minutes = String(message % 60).padStart(2, 0)
+// // console.log('minutes: ', minutes)
+// const result = `${hours}:${minutes}`
+// console.log(result)
 
 //
 //
@@ -44,17 +36,28 @@ console.log(result)
 
 //3. Напишіть цикл, який виведе в консоль усі парні числа від max до min включно по зменшенню
 
-//
-// const max = 50;
-// const min = 23;
-//
+// const max = 50
+// const min = 23
+
+// for (let i = max; i >= min; i -= 1) {
+//     if (i % 2 === 0) {
+//         console.log(i)
+//     }
+// }
 
 //4. За допомогою циклу for знайдіть добуток (результат множення) усіх парних чисел у проміжку від min до max включно
 
-//
-// const max = 50;
-// const min = 0;
-//
+// const max = 20
+
+// const min = 1
+// let count = 1
+
+// for (let i = min; i <= max; i += 1) {
+//     if (i % 2 === 0) {
+//         count *= i
+//     }
+// }
+// console.log(count)
 
 //5. Напишіть код, який буде запитувати логін за допомогою prompt "Hello, please enter your login!"
 // і виводити результат у консоль браузера
@@ -123,7 +126,6 @@ console.log(result)
 /// 11. Написати функцію, яка буде видаляти з масива усі значення, які приводяться до false
 // undefined, null, false, '', 0, NaN
 
-
 //
 // const array = [
 //   1,
@@ -141,7 +143,6 @@ console.log(result)
 //   NaN,
 //   "hbs",
 // ];
-
 
 // 12. Напиши скрипт, який порівняє два масива і виведе у консоль результат чи усі елементи у них однакові
 
