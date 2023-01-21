@@ -6,21 +6,37 @@
 //у противному випадку показати:"Don't you know? ECMAScript!"
 
 
-let mess = prompt("What is the official name of JavaScript?");
+// let mess = prompt("What is the official name of JavaScript?");
 // alert();
 // if(mess === "ECMAScript"){
 //     alert("True!");
 // } else {alert("Don't you know? ECMAScript!");}
 
-const text =  mess === "ECMAScript"? "True!" : "Don't you know? ECMAScript!";
-alert(text);
+// const text =  mess === "ECMAScript"? "True!" : "Don't you know? ECMAScript!";
+// alert(text);
 
 
 
-//2. Напишіть програму, яка запитає у користувача "Enter the number of minutes to format"
-//число (кількість хвилин) і виведе в консоль
-//рядок у форматі годин і хвилин, тобто 70 має повернути у консоль "01:10"
+// 2. Напишіть програму, яка запитає у користувача "Enter the number of minutes to format"
+// число (кількість хвилин) і виведе в консоль
+// рядок у форматі годин і хвилин, тобто 70 має повернути у консоль "01:10"
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+
+const message = prompt('Enter the number of minutes to format');
+
+
+const hours = String(Math.floor(message / 60)).padStart(2, 0);
+// console.log('hours: ', hours)
+// const minutes = message - 60 * hours;
+// console.log("minutes", minutes)
+const minutes = String(message % 60).padStart(2, 0);
+// console.log('minutes: ', minutes)
+const result = `${hours}:${minutes}`;
+console.log(result)
+
+
+
+
 
 //
 //
