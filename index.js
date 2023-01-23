@@ -71,9 +71,38 @@
 //Якщо користувач вводить "adminPassword", то вивести у консоль рядок "Hello!"
 //Якщо користувач вводить щось відмінне від "adminPassword", то вивести рядок "Goodbye!"
 
-//
+
 // const loginInput = prompt("Hello, please enter your login!");
-//
+
+// switch (loginInput) {
+//     case null:
+//         console.log("Authorization has been cancelled");
+//         break;
+        
+//     case "admin":
+//         const pass = prompt("Please enter your password)");
+
+//         switch (pass) {
+//             case null:
+//                 console.log("Authorization has been cancelled");
+//                 break;
+
+//             case "adminPassword":
+//                 console.log("Hello!");
+//                 break;
+
+        
+//             default:
+//                 console.log("Goodbye!");
+//                 break;
+//             }
+//         break;
+            
+//     default:
+//         console.log("Goodbye!");
+//         break;
+// }
+
 
 //6. При завантаженні сторінки користувачу у prompt пропонується ввести число 'Hello, enter please the number'.
 // Введене число додається до значення змінної total.
@@ -81,9 +110,21 @@
 //Після того, як користувач припинив серію введень і натиснув кнопку Cancel, показати alert з рядком "The total sum of the entered numbers is [total]."
 //Робити перевірку, що користувач ввів саме число, а не довільний рядок не потрібно.
 
-//
-// let inputValue = prompt("Hello, enter please the number");
-//
+
+// let inputValue ;
+// // let inputValue = prompt("Hello, enter please the number"); 
+// // console.log("inputValue", inputValue);
+
+// let total = 0;
+// do {
+//     inputValue = prompt("Hello, enter please the number");
+//     total += Number(inputValue);
+//     console.log("total", total);
+
+// } while (inputValue !== null);
+// alert(`The total sum of the entered numbers is ${total}.`);
+
+
 
 //7. Напишіть цикл, який пропонує ввести
 //число більше 100 через prompt 'Hello, enter please the number greater then 100.' та виводить його у alert, якщо умова виконана
@@ -91,9 +132,32 @@
 //Цикл повинен запитувати число, поки користувач не введе число більше 100.
 // Якщо користувач натисне кнопку відміни у prompt, то у alert треба вивести 'Goodbye'.
 
-//
+// let input;
+// do {
+    //     input = prompt("Hello, enter please the number greater then 100.");
+    //     console.log("input", Number(input));
+    //     if(input === null){
+        //         alert('Goodbye');
+        //         break;
+        //     }
+        // } while (Number(input)<=100);
+        // alert(Number(input));
+        
+
+//2
 // let input = prompt("Hello, enter please the number greater then 100.");
-//
+// switch (input) {
+//     case null:
+//         alert('Goodbye');
+//         break;
+
+//     default:
+//         while (Number(input)<=100){
+//             input = prompt("Hello, enter please the number greater then 100.");
+//         }
+//         alert(Number(input));   
+//         break;
+// }
 
 // 8. При завантаженні сторінки користувачу у prompt пропонується ввести число від 0 до 59 'Hello, enter please the number between  0 and 59'.
 //Зроби перевірку на відповідність введеного числа вказаному діапазону (0-59). Якщо число не відповідає виведіть
