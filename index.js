@@ -75,7 +75,7 @@
 // const loginInput = prompt("Hello, please enter your login!");
 //
 
-const message = prompt('Hello, please enter your login!')
+// const message = prompt('Hello, please enter your login!')
 
 // if (message === null) {
 //     console.log('Authorization has been cancelled')
@@ -93,7 +93,7 @@ const message = prompt('Hello, please enter your login!')
 //     console.log('Goodbye!')
 // }
 
-// let text 
+// let text
 // switch (message) {
 //     case null:
 //         text = 'Authorization has been cancelled'
@@ -104,11 +104,11 @@ const message = prompt('Hello, please enter your login!')
 //         case null:
 //         text = 'Authorization has been cancelled'
 //         break;
-        
+
 //         case 'adminPassword':
 //         text = 'Hello!'
 //         break;
- 
+
 //         default:
 //             text = 'Goodbye!'
 //             break;
@@ -206,3 +206,30 @@ const message = prompt('Hello, please enter your login!')
 // const arr7 = [1, 4, 6, "color", 324, 232, "list", 11, 9, "dream", 34, 0, -30];
 // const arr8 = [6, "dream", -30, 10, 9, 1, 324, 34, "color", 4, 232, 0, "list"];
 //
+
+//1. Напишіть скрипт, який для об'єкта user, послідовно:
+//1 додасть властивість mood зі значенням 'happy'
+//2 замінить значення властивості hobby на 'skydiving'
+//3 замінить значення властивості premium на false
+//4 використовуючи Object.keys() и for...of, виведе у консоль зміст об'єкта users у форматі:
+//name: John
+//"age: 20"
+//"hobby: skydiving"
+//"premium: false"
+//"mood: happy"
+
+const user = {
+    name: 'John',
+    age: 20,
+    hobby: 'tenis',
+    premium: true,
+}
+
+user.mood = 'happy'
+user.hobby = 'skydiving'
+user.premium = false
+
+const keys = Object.keys(user)
+for (const key of keys) {
+    console.log(`${key}: ${user[key]}`)
+}
