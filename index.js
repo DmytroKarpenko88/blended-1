@@ -254,7 +254,6 @@
 // }
 // console.log(getTotalSalary(salaries));
 
-
 //3. Напишіть фукцію calcTotalPrice(stones, stonesName),
 //яка приймає масив об'єктів і рядок з назвою каменю.
 //Функція обчислює і повертає загальну вартість каменів з таким іменем
@@ -277,9 +276,6 @@
 //   }
 // console.log(calcTotalPrice(stones, 'sapphire'));
 
-
-
-
 //4. Створіть об'єкт calculator з трьома методами
 //read(a, b) - приймає два аргумента та зберігає їх як властивості об'єкта під ключами prop1 та prop2
 //sum() перевіряє чи присутні  властивості prop1/prop1 та повертає їх суму, в противному випадку повертає null
@@ -287,7 +283,7 @@
 // Не забудьте, що математичні оператори працюють коректно тільки з числовими значеннями
 
 //const calculator = {
-   /* read(a, b) {
+/* read(a, b) {
         if (!isNaN(a) && !isNaN(b)) { this.prop1 = a; this.prop2 = b }
     },
     
@@ -309,3 +305,30 @@
 calculator.read(18);
 console.log(calculator.sum());
 */
+
+//6. Напишіть функцію updateObject, яка приймає об'єкт та перелік ключів
+//і повертає новий об'єкт без вказаних властивостей
+//Очікуваний результат ({ a: 1, b: 2, c: 3 }, 'b', 'c') => {a: 1}
+
+// const updateObject = function (obj, ...removedKeys) {
+//     const newObj = {}
+//     const keys = Object.keys(obj)
+//     // console.log(keys)
+//     for (const key of keys) {
+//         if (!removedKeys.includes(key)) {
+//             newObj[key] = obj[key]
+//         }
+//     }
+//     return newObj
+// }
+
+// const updateObject = function (obj, ...removedKeys) {
+//     const newObj = { ...obj }
+//     for (const key of removedKeys) {
+//         delete newObj[key]
+//     }
+//     return newObj
+// }
+// console.log(updateObject({ a: 1, b: 2, c: 3 }, 'b', 'c')) // {a: 1}
+// console.log(updateObject({ a: 1, b: 2, c: 3 }))
+// console.log(updateObject({ a: 1, b: 2, c: 3 }, 'c'))
