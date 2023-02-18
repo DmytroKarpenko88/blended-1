@@ -419,3 +419,21 @@ const item = {
 }
 
 callAction(item.getQuantity.bind(item));
+
+// / 6. Напишіть функцію each(array, callback), яка
+//першим параметром приймає масив, а другим - функцію,
+//яка застосується до кожного елемента масива.
+//Функція each має повернути новий масив, елементами
+//якого будуть результати виклику callback.
+//callback функція має множити елементи на 2
+const array = [1, 2, 3, 4, 5, 6]
+function each(array, callback) {
+    const results = []
+    array.forEach((item) => {
+        const result = callback(item)
+        results.push(result)
+    })
+    return results
+}
+const doubleValues = (value) => value * 2
+console.log(each(array, doubleValues))
