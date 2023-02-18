@@ -375,13 +375,9 @@ console.log(calculator.sum());
 
 // makeProduct('Banan', '2,5$', showProduct)
 
-
-
 // 3. Напишіть функцію makeShef(shefName), яка повертає функцію
 //makeDish(dish), яка памятає ім'я шефа під час її виклику
 //Функція makeDish має логіровать "<shef> is cooking <dish>"
-
-
 
 // function makeShef(shefName) {
 //     return function makeDish(dish) {
@@ -393,9 +389,8 @@ console.log(calculator.sum());
 // const shefAndrey = makeShef('Andrey')
 // shefArtem('Pizza')
 // shefArtem('soup')
- 
-// shefAndrey('cake')
 
+// shefAndrey('cake')
 
 // 4. Виправте помилки, щоб код працював
 // const product = {
@@ -418,7 +413,7 @@ const item = {
     quantity: 8,
 }
 
-callAction(item.getQuantity.bind(item));
+callAction(item.getQuantity.bind(item))
 
 // / 6. Напишіть функцію each(array, callback), яка
 //першим параметром приймає масив, а другим - функцію,
@@ -426,14 +421,34 @@ callAction(item.getQuantity.bind(item));
 //Функція each має повернути новий масив, елементами
 //якого будуть результати виклику callback.
 //callback функція має множити елементи на 2
-const array = [1, 2, 3, 4, 5, 6]
-function each(array, callback) {
-    const results = []
-    array.forEach((item) => {
-        const result = callback(item)
-        results.push(result)
-    })
-    return results
-}
-const doubleValues = (value) => value * 2
-console.log(each(array, doubleValues))
+// const array = [1, 2, 3, 4, 5, 6]
+// function each(array, callback) {
+//     const results = []
+//     array.forEach((item) => {
+//         const result = callback(item)
+//         results.push(result)
+//     })
+//     return results
+// }
+// const doubleValues = (value) => value * 2
+// console.log(each(array, doubleValues))
+
+// 10. Напиши функцию конструктор User для создания пользователя со следующими свойствами
+//a. userName - имя, строка
+//b. age - возраст, число
+//c. numbersOfPost - количество постов, число
+//d. User ожидает 1 параметр - объект настроек с одноименными свойствами
+
+//Добавь метод getInfo(), который возвращает строку:
+//`Пользователю ${} ${} лет и у него ${} публикаций.
+
+// function User({ userName, age, numbersOfPost }) {
+//     this.userName = userName
+//     this.age = age
+//     this.numbersOfPost = numbersOfPost
+// }
+// User.prototype.getInfo = function () {
+//     return `Пользователю ${this.userName} ${this.age} лет и у него ${this.numbersOfPost} публикаций`
+// }
+// const mango = new User({ userName: 'Maryna', age: '23', numbersOfPost: '3' })
+// console.log(mango.getInfo())
