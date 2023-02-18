@@ -332,3 +332,21 @@ console.log(calculator.sum());
 // console.log(updateObject({ a: 1, b: 2, c: 3 }, 'b', 'c')) // {a: 1}
 // console.log(updateObject({ a: 1, b: 2, c: 3 }))
 // console.log(updateObject({ a: 1, b: 2, c: 3 }, 'c'))
+
+//1. Напишіть дві функції
+// letMeSeeYourName(callback) - має запитувати ім'я користувача через prompt і викликати callback функцію
+//greet(name) - коллбек, що приймає ім'я і логірує в консоль рядок "Привіт <name>"
+//Реалізуй перевірку, що prompt не пустий
+
+// const letMeSeeYourName = (callback) => {
+// const name = prompt("Enter your name")
+// if(name) {
+//   callback(name);
+// }
+
+// }
+// const greet = (name) => {
+//   console.log(`Привіт ${name}`);
+// }
+
+// letMeSeeYourName(greet);
