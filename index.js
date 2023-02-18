@@ -360,17 +360,39 @@ console.log(calculator.sum());
 //showProduct(product) - коллбек, що приймає об'єкт
 //продукта і логірує його в консоль
 
-function makeProduct(name, price, callback) {
-    const obj = {
-        name,
-        price,
-        id: Math.random(),
+// function makeProduct(name, price, callback) {
+//     const obj = {
+//         name,
+//         price,
+//         id: Math.random(),
+//     }
+//     callback(obj)
+// }
+
+// function showProduct(product) {
+//     console.log(product)
+// }
+
+// makeProduct('Banan', '2,5$', showProduct)
+
+
+
+// 3. Напишіть функцію makeShef(shefName), яка повертає функцію
+//makeDish(dish), яка памятає ім'я шефа під час її виклику
+//Функція makeDish має логіровать "<shef> is cooking <dish>"
+
+
+
+function makeShef(shefName) {
+    return function makeDish(dish) {
+     console.log(`${shefName} is cooking ${dish}`)
     }
-    callback(obj)
 }
 
-function showProduct(product) {
-    console.log(product)
-}
+const shefArtem = makeShef('Artem')
+const shefAndrey = makeShef('Andrey')
+shefArtem('Pizza')
+shefArtem('soup')
+ 
+shefAndrey('cake')
 
-makeProduct('Banan', '2,5$', showProduct)
