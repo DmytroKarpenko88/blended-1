@@ -383,16 +383,39 @@ console.log(calculator.sum());
 
 
 
-function makeShef(shefName) {
-    return function makeDish(dish) {
-     console.log(`${shefName} is cooking ${dish}`)
-    }
+// function makeShef(shefName) {
+//     return function makeDish(dish) {
+//      console.log(`${shefName} is cooking ${dish}`)
+//     }
+// }
+
+// const shefArtem = makeShef('Artem')
+// const shefAndrey = makeShef('Andrey')
+// shefArtem('Pizza')
+// shefArtem('soup')
+ 
+// shefAndrey('cake')
+
+
+// 4. Виправте помилки, щоб код працював
+// const product = {
+//     price: 5000,
+//     showPrice() {
+//         console.log(this.price)
+//     },
+// }
+// product.showPrice()
+
+// 5. Виправте код, щоб він працював
+function callAction(action) {
+    action()
 }
 
-const shefArtem = makeShef('Artem')
-const shefAndrey = makeShef('Andrey')
-shefArtem('Pizza')
-shefArtem('soup')
- 
-shefAndrey('cake')
+const item = {
+    getQuantity() {
+        console.log(this.quantity)
+    },
+    quantity: 8,
+}
 
+callAction(item.getQuantity.bind(item));
