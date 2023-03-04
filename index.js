@@ -573,16 +573,33 @@ console.log(calculator.sum());
 // "Show", при повторному натисканні текст знову стає доступний (замість зірочок - літери) і кнопка приймає початковий вигляд.
 // */
 
-const passwordInput = document.querySelector(
-    'input[data-target="passwordInput"]'
-)
-const passwordButton = document.querySelector('#passwordButton')
-passwordButton.addEventListener('click', () => {
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text'
-        passwordButton.textContent = 'Hide'
-    } else {
-        passwordInput.type = 'password'
-        passwordButton.textContent = 'Show'
-    }
+// const passwordInput = document.querySelector(
+//     'input[data-target="passwordInput"]'
+// )
+// const passwordButton = document.querySelector('#passwordButton')
+// passwordButton.addEventListener('click', () => {
+//     if (passwordInput.type === 'password') {
+//         passwordInput.type = 'text'
+//         passwordButton.textContent = 'Hide'
+//     } else {
+//         passwordInput.type = 'password'
+//         passwordButton.textContent = 'Show'
+//     }
+// })
+
+/*
+Задача 9
+Удали из списка те элементы, которые отмечены.
+*/
+
+const checkboxForm = document.querySelector('.checkboxForm')
+const checkBoxWrapper = document.querySelectorAll('.checkboxWrapper')
+
+checkboxForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    checkBoxWrapper.forEach((item) => {
+        if (item.querySelector('input:checked')) {
+            item.remove()
+        }
+    })
 })
