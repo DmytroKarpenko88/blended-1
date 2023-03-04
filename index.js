@@ -524,3 +524,22 @@ callAction(item.getQuantity.bind(item))
 // function onBtnClick(e) {
 //  itemsRef.forEach(item => item.textContent *= 2)
 // };
+
+/*
+Задача 5
+Додайте слухача по кліку та визначте, коли клік відбувається
+в середині елемента з id "place" і коли клік відбувається поза зоною елемента
+*/
+
+
+const containerRef = document.querySelector('#place')
+
+document.addEventListener('click', onContainerClick)
+
+function onContainerClick(event) {
+    if (containerRef.contains(event.target)) {
+     console.log('Bingo')
+    } else {
+        console.log('error')
+ }
+}
