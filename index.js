@@ -462,25 +462,48 @@ callAction(item.getQuantity.bind(item))
 //addItems(item) - получает новый товар и добавляет его к текущим
 //removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
 
-function Storage(array) {
-    this.items = array
-}
+// function Storage(array) {
+//     this.items = array
+// }
 
-Storage.prototype.getItems = function () {
-    return this.items
-}
-Storage.prototype.addItems = function (newItem) {
-    this.items.push(newItem)
-}
-Storage.prototype.removeItem = function (removeItem) {
-    this.items = this.items.filter((item) => item !== removeItem)
-}
+// Storage.prototype.getItems = function () {
+//     return this.items
+// }
+// Storage.prototype.addItems = function (newItem) {
+//     this.items.push(newItem)
+// }
+// Storage.prototype.removeItem = function (removeItem) {
+//     this.items = this.items.filter((item) => item !== removeItem)
+// }
 
-const fruits = new Storage(['apple', 'orange', 'banana'])
+// const fruits = new Storage(['apple', 'orange', 'banana'])
+
+// // console.log(fruits.getItems())
+// fruits.addItems('pineapple')
+// console.log(fruits.getItems())
+// fruits.removeItem('banana')
 
 // console.log(fruits.getItems())
-fruits.addItems('pineapple')
-console.log(fruits.getItems())
-fruits.removeItem('banana')
 
-console.log(fruits.getItems())
+/*
+Задача 4
+Кнопка "Decrease" робить квадрат меньше на 10 пікселів, кпопка "Increase" - більше на 10 пикселів.
+*/
+
+const refs = {
+    decrease: document.querySelector('[data-type="decrease"]'),
+    increase: document.querySelector('[data-type="increase"]'),
+    box: document.querySelector('#box'),
+}
+
+refs.decrease.addEventListener('click', onDecrease)
+refs.increase.addEventListener('click', onIncrease)
+
+function onDecrease() {
+    refs.box.style.width = `${refs.box.offsetWidth - 10}px`
+    refs.box.style.height = `${refs.box.offsetHeight - 10}px`
+}
+function onIncrease() {
+    refs.box.style.width = `${refs.box.offsetWidth + 10}px`
+    refs.box.style.height = `${refs.box.offsetHeight + 10}px`
+}
