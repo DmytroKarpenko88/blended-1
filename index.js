@@ -568,3 +568,21 @@ console.log(calculator.sum());
 //     leftRef.value = rightRef.value
 //     rightRef.value = acc
 // }
+// Задача 3
+// Кнопка "Hide" ховає текст (замість літер - зірочки) і заміняє назву кнопки на
+// "Show", при повторному натисканні текст знову стає доступний (замість зірочок - літери) і кнопка приймає початковий вигляд.
+// */
+
+const passwordInput = document.querySelector(
+    'input[data-target="passwordInput"]'
+)
+const passwordButton = document.querySelector('#passwordButton')
+passwordButton.addEventListener('click', () => {
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text'
+        passwordButton.textContent = 'Hide'
+    } else {
+        passwordInput.type = 'password'
+        passwordButton.textContent = 'Show'
+    }
+})
