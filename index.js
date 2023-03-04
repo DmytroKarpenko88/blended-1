@@ -490,20 +490,37 @@ callAction(item.getQuantity.bind(item))
 Кнопка "Decrease" робить квадрат меньше на 10 пікселів, кпопка "Increase" - більше на 10 пикселів.
 */
 
-const refs = {
-    decrease: document.querySelector('[data-type="decrease"]'),
-    increase: document.querySelector('[data-type="increase"]'),
-    box: document.querySelector('#box'),
-}
+// const refs = {
+//     decrease: document.querySelector('[data-type="decrease"]'),
+//     increase: document.querySelector('[data-type="increase"]'),
+//     box: document.querySelector('#box'),
+// }
 
-refs.decrease.addEventListener('click', onDecrease)
-refs.increase.addEventListener('click', onIncrease)
+// refs.decrease.addEventListener('click', onDecrease)
+// refs.increase.addEventListener('click', onIncrease)
 
-function onDecrease() {
-    refs.box.style.width = `${refs.box.offsetWidth - 10}px`
-    refs.box.style.height = `${refs.box.offsetHeight - 10}px`
-}
-function onIncrease() {
-    refs.box.style.width = `${refs.box.offsetWidth + 10}px`
-    refs.box.style.height = `${refs.box.offsetHeight + 10}px`
-}
+// function onDecrease() {
+//     refs.box.style.width = `${refs.box.offsetWidth - 10}px`
+//     refs.box.style.height = `${refs.box.offsetHeight - 10}px`
+// }
+// function onIncrease() {
+//     refs.box.style.width = `${refs.box.offsetWidth + 10}px`
+//     refs.box.style.height = `${refs.box.offsetHeight + 10}px`
+// }
+
+
+/*
+Задача 6
+По кліку на кнопку "Double" збільшіть значення
+в кожному елементі списку у 2 рази
+*/
+
+
+// const itemsRef = document.querySelectorAll('.listItem');
+// const btnRef = document.querySelector('#double')
+
+// btnRef.addEventListener('click', onBtnClick)
+
+// function onBtnClick(e) {
+//  itemsRef.forEach(item => item.textContent *= 2)
+// };
