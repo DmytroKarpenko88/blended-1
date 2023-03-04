@@ -402,18 +402,18 @@ console.log(calculator.sum());
 // product.showPrice()
 
 // 5. Виправте код, щоб він працював
-function callAction(action) {
-    action()
-}
+// function callAction(action) {
+//     action()
+// }
 
-const item = {
-    getQuantity() {
-        console.log(this.quantity)
-    },
-    quantity: 8,
-}
+// const item = {
+//     getQuantity() {
+//         console.log(this.quantity)
+//     },
+//     quantity: 8,
+// }
 
-callAction(item.getQuantity.bind(item))
+// callAction(item.getQuantity.bind(item))
 
 // / 6. Напишіть функцію each(array, callback), яка
 //першим параметром приймає масив, а другим - функцію,
@@ -508,13 +508,11 @@ callAction(item.getQuantity.bind(item))
 //     refs.box.style.height = `${refs.box.offsetHeight + 10}px`
 // }
 
-
 /*
 Задача 6
 По кліку на кнопку "Double" збільшіть значення
 в кожному елементі списку у 2 рази
 */
-
 
 // const itemsRef = document.querySelectorAll('.listItem');
 // const btnRef = document.querySelector('#double')
@@ -531,15 +529,42 @@ callAction(item.getQuantity.bind(item))
 в середині елемента з id "place" і коли клік відбувається поза зоною елемента
 */
 
+// const containerRef = document.querySelector('#place')
 
-const containerRef = document.querySelector('#place')
+// document.addEventListener('click', onContainerClick)
 
-document.addEventListener('click', onContainerClick)
+// function onContainerClick(event) {
+//     if (containerRef.contains(event.target)) {
+//      console.log('Bingo')
+//     } else {
+//         console.log('error')
+//  }
+// }
 
-function onContainerClick(event) {
-    if (containerRef.contains(event.target)) {
-     console.log('Bingo')
-    } else {
-        console.log('error')
- }
-}
+/*
+Задача 2
+При натисканні на кнопку "SWAP ME" виконується обмін змісту 
+між двома інпутами. 
+Можна нажимати на неї декілька разів або вручну 
+змінити вміст інпутів. 
+
+        <div>
+            <p class="taskTitle">ЗАДАЧА 2</p>
+            <button id="swapButton">SWAP ME</button>
+            <input data-type="left" type="text" value="???" />
+            <input data-type="right" type="text" value="!!!" />
+        </div>
+
+*/
+//
+// const btnRef = document.querySelector('#swapButton')
+// const leftRef = document.querySelector('[data-type="left"]')
+// const rightRef = document.querySelector('[data-type="right"]')
+
+// document.addEventListener('click', onBtnClick)
+
+// function onBtnClick(e) {
+//     const acc = leftRef.value
+//     leftRef.value = rightRef.value
+//     rightRef.value = acc
+// }
