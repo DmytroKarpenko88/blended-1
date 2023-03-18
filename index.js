@@ -592,14 +592,51 @@ console.log(calculator.sum());
 Удали из списка те элементы, которые отмечены.
 */
 
-const checkboxForm = document.querySelector('.checkboxForm')
-const checkBoxWrapper = document.querySelectorAll('.checkboxWrapper')
+// const checkboxForm = document.querySelector('.checkboxForm')
+// const checkBoxWrapper = document.querySelectorAll('.checkboxWrapper')
 
-checkboxForm.addEventListener('submit', (e) => {
+// checkboxForm.addEventListener('submit', (e) => {
+//     e.preventDefault()
+//     checkBoxWrapper.forEach((item) => {
+//         if (item.querySelector('input:checked')) {
+//             item.remove()
+//         }
+//     })
+// })
+
+/**
+ * ЗАДАЧА 8
+ * Створи перелік справ.
+ * Є  інпут, в який вноситься зміст задачі.
+ * При натисканні на кнопку "Додати" задача додається в список #list.
+ * Поруч з кожною задачею знаходится кнопка "Видалити", щоб можна було
+ * видалити цю задачу із списку.
+ * Список з задачами має бути доступним післе перезавантаження сторінки.
+ */
+
+// 1. on click 'submit' => add the task (with button delete) to list, add to local storage.
+// 2. on click 'delete' remove from local storage and remove from list.
+// 3. create function firstLoadPage
+
+const STORAGE = 'tasks'
+
+const formRef = document.querySelector('#task-form')
+const listRef = document.querySelector('#task-list')
+
+formRef.addEventListener('submit', onFormClick)
+
+function onFormClick(e) {
     e.preventDefault()
-    checkBoxWrapper.forEach((item) => {
-        if (item.querySelector('input:checked')) {
-            item.remove()
-        }
-    })
-})
+    const dataFromLocalStorage = JSON.parse(localStorage.getItem(STORAGE)) || []
+    const valueInput = e.currentTarget.elements.taskName.value.trim()
+    const marcup = `<li><p>${valueInput}</p><button type="button">delete</button></li>`
+    console.log('valueInput:', valueInput);
+    if (valueInput) {
+        listRef.insertAdjacentHTML('beforeend', marcup)
+    };
+    
+    dataFromLocalStorage.push(valueInput);
+
+    localStorage.setItem(STORAGE, JSON.stringify(dataFromLocalStorage));
+    
+}
