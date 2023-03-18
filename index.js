@@ -618,7 +618,7 @@ console.log(calculator.sum());
 // 2. on click 'delete' remove from local storage and remove from list.
 // 3. create function firstLoadPage
 
-const STORAGE = 'tasks'
+const STORAGE_KEY = 'tasks'
 
 const formRef = document.querySelector('#task-form')
 const listRef = document.querySelector('#task-list')
@@ -627,16 +627,33 @@ formRef.addEventListener('submit', onFormClick)
 
 function onFormClick(e) {
     e.preventDefault()
-    const dataFromLocalStorage = JSON.parse(localStorage.getItem(STORAGE)) || []
+
+    const id = Date.now()
+
+    const dataFromLocalStorage =
+        JSON.parse(localStorage.getItem(STORAGE_KEY)) || []
     const valueInput = e.currentTarget.elements.taskName.value.trim()
-    const marcup = `<li><p>${valueInput}</p><button type="button">delete</button></li>`
-    console.log('valueInput:', valueInput);
+    const marcup = `<li><p>${valueInput}</p><button type="button" data-id="${id}">delete</button></li>`
+    console.log('valueInput:', valueInput)
     if (valueInput) {
         listRef.insertAdjacentHTML('beforeend', marcup)
-    };
-    
-    dataFromLocalStorage.push(valueInput);
+    }
 
-    localStorage.setItem(STORAGE, JSON.stringify(dataFromLocalStorage));
-    
+    dataFromLocalStorage.push({ id, text: valueInput })
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(dataFromLocalStorage))
+}
+
+listRef.addEventListener('click', deleteTask)
+
+function deleteTask(e) {
+    const id = e.target.dataset.id
+    const dataFromLocalStorage = JSON.parse(localStorage.getItem(STORAGE_KEY))
+
+    const newTasks = dataFromLocalStorage.filter((val) => val.id !== Number(id))
+    console.log('newTasks:', newTasks)
+
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newTasks))
+
+    e.target.closest('li').remove()
 }
