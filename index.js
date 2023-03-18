@@ -624,7 +624,7 @@ const formRef = document.querySelector('#task-form')
 const listRef = document.querySelector('#task-list')
 
 formRef.addEventListener('submit', onFormClick)
-
+loadPage()
 function onFormClick(e) {
     e.preventDefault()
 
@@ -642,6 +642,7 @@ function onFormClick(e) {
     dataFromLocalStorage.push({ id, text: valueInput })
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(dataFromLocalStorage))
+    formRef.reset()
 }
 
 listRef.addEventListener('click', deleteTask)
@@ -656,4 +657,14 @@ function deleteTask(e) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(newTasks))
 
     e.target.closest('li').remove()
+}
+
+function loadPage() {
+    const dataFromLocalStorage = JSON.parse(localStorage.getItem(STORAGE_KEY))
+    const markup = dataFromLocalStorage
+        .map((item) => {
+            return `<li><p>${item.text}</p><button type="button" data-id="${item.id}">delete</button></li>`
+        })
+        .join('')
+    listRef.innerHTML = markup
 }
