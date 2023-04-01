@@ -9,14 +9,21 @@ export function markupAllProducts(products) {
       </li>
         `;
     })
-    .join('');
+    .join("");
 }
 
 export function markupSingleProduct({ brand, images, price }) {
-      return `
+  return `
       <p>${brand}</p>
       <img src="${images[0]}">
       <p>${price}</p>
         `;
-    }
-    
+}
+
+export function markupNewProduct({ title, description, price }) {
+  return `
+      <p>${title}</p>
+      <p>${description}</p>
+      <p>${price}</p>
+        `;
+}
