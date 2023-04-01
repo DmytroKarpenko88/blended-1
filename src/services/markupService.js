@@ -11,3 +11,12 @@ export function markupAllProducts(products) {
     })
     .join('');
 }
+
+export function markupSingleProduct({ brand, images, price }) {
+      return `
+      <p>${brand}</p>
+      <img src="${images[0]}">
+      <p>${price}</p>
+        `;
+    }
+    
