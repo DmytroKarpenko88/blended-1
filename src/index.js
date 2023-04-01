@@ -10,7 +10,9 @@ import {
   markupAllProducts,
   markupSingleProduct,
   markupNewProduct,
+  markupInfoUser,
 } from "./services/markupService";
+import {getAllUsers} from "./requests/users"
 
 const allProductsRef = document.querySelector("#allProducts");
 
@@ -91,3 +93,14 @@ async function onDeleteProduct(e) {
     alert(`message: ERROR`);
   }
 }
+
+const listRef = document.querySelector('#allUsers');
+
+async function renderInfoUser(){
+const {data: {users}} = await getAllUsers();
+
+listRef.innerHTML = markupInfoUser(users)
+
+}
+
+renderInfoUser()

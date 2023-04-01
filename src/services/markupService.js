@@ -27,3 +27,13 @@ export function markupNewProduct({ title, description, price }) {
       <p>${price}</p>
         `;
 }
+
+export function markupInfoUser(users) {
+ return users.map(({firstName, lastName, email, image}) => `<li><img src="${image}" alt="">
+ <p>firstName: ${firstName}</p>
+ <p>lastName: ${lastName}</p>
+ <p>email: ${email}</p>
+</li>`).join('')
+
+  
+}
