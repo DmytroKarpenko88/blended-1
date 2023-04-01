@@ -19,3 +19,5 @@ export async function fetchDeleteProductById(id) {
   const result = await apiDummyJSON.delete(`/products/${id}`);
   return result;
 }
+
+
