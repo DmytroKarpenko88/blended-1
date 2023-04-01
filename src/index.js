@@ -66,3 +66,20 @@ async function addProduct(event) {
     console.log(error.message);
   }
 }
+///
+//
+///
+///
+//
+
+// const submitBtn = document.querySelector('#singleProductForm');
+// const container = document.querySelector('#singleProduct')
+
+// submitBtn.addEventListener('submit', onFormSubmit)
+
+// async function onFormSubmit(e) {
+//   e.preventDefault()
+//   const value = e.target.elements.id.value;
+//   const { data } = await fetchProductById(value);
+
+//   container.innerHTML = markupSingleProduct(data)
