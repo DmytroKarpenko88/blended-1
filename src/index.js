@@ -4,6 +4,7 @@ import {
   fetchAllProducts,
   fetchProductById,
   fetchNewProduct,
+  fetchDeleteProductById,
 } from "./requests/products";
 import {
   markupAllProducts,
@@ -44,12 +45,12 @@ async function onFormSubmit(e) {
   }
 }
 
-const refs = {
-  form: document.querySelector("#newProduct"),
-  newProductSection: document.querySelector("#newProductSection"),
-};
+// const refs = {
+//   form: document.querySelector("#newProduct"),
+//   newProductSection: document.querySelector("#newProductSection"),
+// };
 
-refs.form.addEventListener("submit", addProduct);
+// refs.form.addEventListener("submit", addProduct);
 
 async function addProduct(event) {
   event.preventDefault();
@@ -66,20 +67,27 @@ async function addProduct(event) {
     console.log(error.message);
   }
 }
-///
-//
-///
-///
-//
 
-// const submitBtn = document.querySelector('#singleProductForm');
-// const container = document.querySelector('#singleProduct')
+const refs = {
+  form: document.querySelector('#deletionProductForm'),
+}
 
-// submitBtn.addEventListener('submit', onFormSubmit)
+refs.form.addEventListener('submit', onDeleteProduct);
 
-// async function onFormSubmit(e) {
-//   e.preventDefault()
-//   const value = e.target.elements.id.value;
-//   const { data } = await fetchProductById(value);
+async function onDeleteProduct(e) {
+  e.preventDefault();
 
-//   container.innerHTML = markupSingleProduct(data)
+  const value = e.target.elements.deletionId.value;
+
+  try {
+    const { data } = await fetchDeleteProductById(value);
+
+    console.log(data);
+
+    if (data.isDeleted) {
+      alert(`message: SUCCESS product with id: ${data.id} has been removed`);
+    } 
+  } catch (error) {
+    alert(`message: ERROR`);
+  }
+}
