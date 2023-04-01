@@ -14,3 +14,8 @@ export async function fetchNewProduct(newProduct) {
   const result = await apiDummyJSON.post(`/products/add`, newProduct);
   return result;
 }
+
+export async function fetchDeleteProductById(id) {
+  const result = await apiDummyJSON.delete(`/products/${id}`);
+  return result;
+}
