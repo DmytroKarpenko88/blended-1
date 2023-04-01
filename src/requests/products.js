@@ -1,12 +1,16 @@
-import { apiDummyJSON } from '../services/api';
+import { apiDummyJSON } from "../services/api";
 
 export async function fetchAllProducts() {
-  const result = await apiDummyJSON.get('/products');
+  const result = await apiDummyJSON.get("/products");
   return result;
 }
 
-
 export async function fetchProductById(id) {
   const result = await apiDummyJSON.get(`/products/${id}`);
-  return result
+  return result;
+}
+
+export async function fetchNewProduct(newProduct) {
+  const result = await apiDummyJSON.post(`/products/add`, newProduct);
+  return result;
 }
